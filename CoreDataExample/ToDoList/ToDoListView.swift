@@ -64,7 +64,7 @@ class ToDoListView: UIView {
                 textCompletion(text)
             }))
             completion(alert)
-        }
+        } 
     
     func presentNewItemAlert(_ textCompletion: @escaping (String) -> Void, completion: @escaping (UIAlertController) -> Void) {
         let alert = UIAlertController(title: "New Item", message: nil, preferredStyle: .alert)
@@ -74,5 +74,5 @@ class ToDoListView: UIView {
             textCompletion(text)
         }))
         completion(alert)
-    } 
+    }
 }
