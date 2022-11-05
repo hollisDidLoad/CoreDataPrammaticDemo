@@ -25,7 +25,7 @@ class ToDoListView: UIView {
         backgroundColor = .white
         setUpConstraints()
     }
-     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,11 +48,19 @@ class ToDoListView: UIView {
         _ toDoList: ToDoList,
         and textCompletion: @escaping (String) -> Void,
         completion: @escaping (UIAlertController) -> Void) {
-            let alert = UIAlertController(title: "Update Item", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "Update Item",
+                message: nil,
+                preferredStyle: .alert
+            )
             alert.addTextField()
             alert.textFields?.first?.text = toDoList.item
-            alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: {_ in
-                guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else { return }
+            alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { _ in
+                guard let field = alert.textFields?.first,
+                      let text = field.text,
+                      !text.isEmpty
+                else { return }
+                
                 textCompletion(text)
             }))
             completion(alert)
