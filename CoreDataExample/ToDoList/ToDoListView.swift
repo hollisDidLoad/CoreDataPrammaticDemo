@@ -74,5 +74,5 @@ class ToDoListView: UIView {
             textCompletion(text)
         }))
         completion(alert)
-    }
+    } 
 }
