@@ -8,7 +8,7 @@
 import CoreData
 
 class ToDoList: NSManagedObject {
-    
+       
     class func fetchToDoListItems() -> NSFetchRequest<ToDoList> {
         return NSFetchRequest<ToDoList>(entityName: "ToDoList")
     }
